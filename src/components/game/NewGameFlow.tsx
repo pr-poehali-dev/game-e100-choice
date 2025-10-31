@@ -160,9 +160,8 @@ const NewGameFlow = ({ players, choiceCards, onGameComplete, onClose }: NewGameF
         </div>
         <h2 className="text-2xl font-bold mb-6 text-center">Выберите две карточки</h2>
         
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-center">Поле 1</h3>
+        <div className="flex gap-4 mb-6 items-start justify-center">
+          <div className="flex-1 max-w-[200px]">
             {card1 ? (
               <Card className="overflow-hidden">
                 <div className="aspect-[3/4] bg-secondary relative">
@@ -190,14 +189,17 @@ const NewGameFlow = ({ players, choiceCards, onGameComplete, onClose }: NewGameF
                 </div>
               </Card>
             ) : (
-              <div className="border-2 border-dashed rounded-lg p-4 min-h-[300px] flex items-center justify-center">
-                <p className="text-muted-foreground text-center">Выберите карточку ниже</p>
+              <div className="border-2 border-dashed rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
+                <p className="text-muted-foreground text-center text-sm">Выберите карточку</p>
               </div>
             )}
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-center">ИЛИ</h3>
+          <div className="flex items-center justify-center pt-20">
+            <h3 className="text-2xl font-bold text-muted-foreground">ИЛИ</h3>
+          </div>
+
+          <div className="flex-1 max-w-[200px]">
             {card2 ? (
               <Card className="overflow-hidden">
                 <div className="aspect-[3/4] bg-secondary relative">
@@ -225,8 +227,8 @@ const NewGameFlow = ({ players, choiceCards, onGameComplete, onClose }: NewGameF
                 </div>
               </Card>
             ) : (
-              <div className="border-2 border-dashed rounded-lg p-4 min-h-[300px] flex items-center justify-center">
-                <p className="text-muted-foreground text-center">Выберите карточку ниже</p>
+              <div className="border-2 border-dashed rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
+                <p className="text-muted-foreground text-center text-sm">Выберите карточку</p>
               </div>
             )}
           </div>

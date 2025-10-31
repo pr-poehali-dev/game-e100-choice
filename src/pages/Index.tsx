@@ -72,34 +72,38 @@ const Index = () => {
   const [choiceCards, setChoiceCards] = useState<ChoiceCard[]>([
     {
       id: '1',
-      name: 'Ferrari',
-      age: '2024',
-      city: 'Италия',
-      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/f4dc651a-ec6d-4b4c-a804-ff82e3ec4910.jpg'
+      name: 'София',
+      age: '25',
+      city: 'Москва',
+      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/971c8c89-0696-4992-ad2d-50ec2cba2c56.jpg'
     },
     {
       id: '2',
-      name: 'Тропический рай',
-      city: 'Мальдивы',
-      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/3709831b-e9cb-4fc7-9b1e-34ac422f4716.jpg'
+      name: 'Александр',
+      age: '28',
+      city: 'Санкт-Петербург',
+      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/4eab95d6-92e4-4d90-bd31-3a670c373a5e.jpg'
     },
     {
       id: '3',
-      name: 'Пентхаус',
-      city: 'Нью-Йорк',
-      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/64567219-313e-4bd2-860b-4dcde6f4c584.jpg'
+      name: 'Виктория',
+      age: '22',
+      city: 'Казань',
+      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/227f5b3a-bd28-477d-8064-31e1d5240537.jpg'
     },
     {
       id: '4',
-      name: 'Ужин в ресторане',
-      city: 'Париж',
-      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/3f3318b9-5eba-4f51-a5cb-24d602d80913.jpg'
+      name: 'Артём',
+      age: '31',
+      city: 'Сочи',
+      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/ca78a12c-00cf-42ee-840e-65075a0cf75d.jpg'
     },
     {
       id: '5',
-      name: 'Горное приключение',
-      city: 'Альпы',
-      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/6379a980-a5da-4357-8691-c9c8c0e41bca.jpg'
+      name: 'Полина',
+      age: '26',
+      city: 'Екатеринбург',
+      photo: 'https://cdn.poehali.dev/projects/bb9c79e0-8c50-4c82-9d77-7a5ed81aea28/files/3bf0bfac-b1d7-4c95-9d03-00e5562a96ea.jpg'
     }
   ]);
   const [history, setHistory] = useState<GameHistory[]>([]);
