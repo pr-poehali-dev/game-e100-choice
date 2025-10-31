@@ -291,9 +291,9 @@ const NewGameFlow = ({ players, choiceCards, onGameComplete, onClose }: NewGameF
         </div>
         <h2 className="text-3xl font-bold mb-8 text-center">Сделайте выбор!</h2>
         
-        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="flex gap-4 items-center justify-center max-w-full overflow-x-auto px-4">
           <Card
-            className="overflow-hidden cursor-pointer hover-scale transition-transform"
+            className="overflow-hidden cursor-pointer hover-scale transition-transform flex-shrink-0 w-[45%] max-w-[200px]"
             onClick={() => card1 && handleFinalChoice(card1)}
           >
             <div className="aspect-[3/4] bg-secondary">
@@ -301,20 +301,22 @@ const NewGameFlow = ({ players, choiceCards, onGameComplete, onClose }: NewGameF
                 <img src={card1.photo} alt={card1.name} className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                  <Icon name="ImageIcon" size={64} className="text-muted-foreground" />
+                  <Icon name="ImageIcon" size={48} className="text-muted-foreground" />
                 </div>
               )}
             </div>
-            <div className="p-4 text-center">
-              <h4 className="text-xl font-bold">{card1?.name}</h4>
-              <p className="text-muted-foreground mt-1">
+            <div className="p-3 text-center">
+              <h4 className="text-lg font-bold truncate">{card1?.name}</h4>
+              <p className="text-sm text-muted-foreground truncate">
                 {card1?.age && card1?.city ? `${card1.age} • ${card1.city}` : card1?.age || card1?.city}
               </p>
             </div>
           </Card>
 
+          <div className="text-2xl font-bold text-muted-foreground flex-shrink-0">ИЛИ</div>
+
           <Card
-            className="overflow-hidden cursor-pointer hover-scale transition-transform"
+            className="overflow-hidden cursor-pointer hover-scale transition-transform flex-shrink-0 w-[45%] max-w-[200px]"
             onClick={() => card2 && handleFinalChoice(card2)}
           >
             <div className="aspect-[3/4] bg-secondary">
@@ -322,13 +324,13 @@ const NewGameFlow = ({ players, choiceCards, onGameComplete, onClose }: NewGameF
                 <img src={card2.photo} alt={card2.name} className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                  <Icon name="ImageIcon" size={64} className="text-muted-foreground" />
+                  <Icon name="ImageIcon" size={48} className="text-muted-foreground" />
                 </div>
               )}
             </div>
-            <div className="p-4 text-center">
-              <h4 className="text-xl font-bold">{card2?.name}</h4>
-              <p className="text-muted-foreground mt-1">
+            <div className="p-3 text-center">
+              <h4 className="text-lg font-bold truncate">{card2?.name}</h4>
+              <p className="text-sm text-muted-foreground truncate">
                 {card2?.age && card2?.city ? `${card2.age} • ${card2.city}` : card2?.age || card2?.city}
               </p>
             </div>

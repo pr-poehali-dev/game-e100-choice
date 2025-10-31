@@ -119,6 +119,17 @@ const CardForm = ({ card, onSave, onCancel }: CardFormProps) => {
   const [city, setCity] = useState(card?.city || '');
   const [photo, setPhoto] = useState(card?.photo || '');
 
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhoto(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) return;
@@ -161,12 +172,29 @@ const CardForm = ({ card, onSave, onCancel }: CardFormProps) => {
         </div>
       </div>
       <div>
-        <label className="text-sm font-medium">Фото (URL)</label>
-        <Input
-          value={photo}
-          onChange={(e) => setPhoto(e.target.value)}
-          placeholder="https://..."
-        />
+        <label className="text-sm font-medium">Фото</label>
+        <div className="space-y-2">
+          <Input
+            type="file"
+            accept="image/*"
+            onChange={handleFileUpload}
+            className="cursor-pointer"
+          />
+          {photo && (
+            <div className="relative w-32 h-40 mx-auto">
+              <img src={photo} alt="Preview" className="w-full h-full object-cover rounded-lg" />
+              <Button
+                type="button"
+                size="icon"
+                variant="destructive"
+                className="absolute -top-2 -right-2"
+                onClick={() => setPhoto('')}
+              >
+                <Icon name="X" size={16} />
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
       <div className="flex gap-2">
         <Button type="submit" className="flex-1">Сохранить</Button>
